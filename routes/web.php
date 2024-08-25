@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 
-Route::resource('ideas', IdeaController::class)->except(['show', 'index', 'create'])->middleware('auth');
+Route::resource('ideas', IdeaController::class);
 Route::resource('ideas', IdeaController::class)->only('show');
 
 

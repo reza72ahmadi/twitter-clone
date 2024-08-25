@@ -4,10 +4,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="card overflow-hidden">
-                   @include('shared.side-bar')
-                    <div class="card-footer text-center py-2">
-                        <a class="btn btn-link btn-sm" href="#">View Profile </a>
-                    </div>
+                    @include('shared.side-bar')
                 </div>
             </div>
             <div class="col-6">

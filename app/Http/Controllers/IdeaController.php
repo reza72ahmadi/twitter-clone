@@ -9,6 +9,12 @@ use PHPUnit\Framework\Attributes\IgnoreFunctionForCodeCoverage;
 
 class IdeaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show', 'index', 'create']);
+    }
+    
     //show
     public function show(Idea $idea)
     {

@@ -30,15 +30,16 @@
 
         @if ($editing ?? false)
             <form action="{{ route('ideas.update', $idea->id) }}" method="post">
+                @method('put')
                 @csrf
                 <div class="mb-3">
-                    <textarea name="content" class="form-control" id="idea" rows="3">{{ $idea->content }}</textarea>
+                    <textarea name="content" class="form-control" id="idea" rows="3">{{ old('content', $idea->content) }}</textarea>
                     @error('content')
                         <span class="text-danger fs-6 mt-2">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="">
-                    <button type="submit" class="btn btn-dark"> Update </button>
+                <div>
+                    <button type="submit" class="btn btn-dark">Update</button>
                 </div>
             </form>
         @else
@@ -46,6 +47,8 @@
                 {{ $idea->content }}
             </p>
         @endif
+
+
         <div class="d-flex justify-content-between">
             <div>
                 <a href="#" class="fw-light nav-link fs-6"> <span class="fas fa-heart me-1">
