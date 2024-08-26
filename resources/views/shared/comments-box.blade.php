@@ -11,7 +11,7 @@
     </form>
     <hr>
     @if ($idea->comments && count($idea->comments) > 0)
-        @foreach ($idea->comments as $comment)
+        @forelse ($idea->comments as $comment)
             <div class="d-flex align-items-start">
                 <img style="width:35px" class="me-2 avatar-sm rounded-circle" src="{{ $comment->user->getImageURL() }}"
                     alt="{{ $idea->user->name }}">
@@ -26,6 +26,8 @@
                     </p>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <p class="text-danger">No result found</p>
+        @endforelse
     @endif
 </div>

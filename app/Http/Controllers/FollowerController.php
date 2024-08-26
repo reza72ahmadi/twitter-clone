@@ -10,9 +10,9 @@ class FollowerController extends Controller
     public function follow(User $user)
     {
         $follower = auth()->user();
-        if (!$follower) {
-            return redirect()->route('login')->with('error', 'You must be logged in to follow users.');
-        }
+        // if (!$follower) {
+        //     return redirect()->route('login')->with('error', 'You must be logged in to follow users.');
+        // }
         $follower->following()->attach($user);
         return redirect()->route('users.show', $user->id)->with('success', 'Followed successfully');
     }

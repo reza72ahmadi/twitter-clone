@@ -16,7 +16,7 @@ class WelcomeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private User $user
+    private User $user;
 
     public function __construct(User $user)
     {
@@ -37,8 +37,8 @@ class WelcomeEmail extends Mailable
         return new Content(
             view: 'emails.welcome-email',
             with:[
-                'user' => $this->user
-            ]
+                'user' => $this->user,
+            ],
         );
     }
 
@@ -46,7 +46,7 @@ class WelcomeEmail extends Mailable
     public function attachments(): array
     {
         return [
-            Attachment::fromStorageDisk('public','profile/')
+            Attachment::fromStorageDisk('public','profile/'),
         ];
     }
 }

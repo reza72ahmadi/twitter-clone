@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $ideas = Idea::orderBy('created_at', 'DESC')->paginate(20);
 
         if (request()->has('search')) {
-            $searchTerm = request()->input('search'); 
+            $searchTerm = request()->input('search');
             $ideas = Idea::where('content', 'like', "%{$searchTerm}%")->orderBy('created_at', 'DESC')->paginate(20);
         }
 
