@@ -5,7 +5,7 @@
             <textarea name="content" class="fs-6 form-control" rows="1"></textarea>
         </div>
         <div>
-            <button type="submit" class="btn btn-sm"> Comment </button>
+            <button type="submit" class="btn btn-info btn-sm"> comment </button>
         </div>
 
     </form>
@@ -31,3 +31,4 @@
         @endforelse
     @endif
 </div>
+
