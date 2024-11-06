@@ -12,10 +12,7 @@ class IdeaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-       
-    }
+    public function index() {}
 
     /**
      * Show the form for creating a new resource.
@@ -63,6 +60,9 @@ class IdeaController extends Controller
      */
     public function destroy(Idea $idea)
     {
-        //
+      
+            $idea->delete();
+        
+        return redirect()->route('dashboard')->with('success', 'Idea Deleted Successfully');
     }
 }

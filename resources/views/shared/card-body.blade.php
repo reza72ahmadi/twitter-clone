@@ -8,20 +8,30 @@
                     </a></h5>
             </div>
         </div>
+        <div class="fa-pull-right">
+            {{-- <a  href="{{ route('idea.edit', $idea->id) }}">Edit</a>
+            <a  href="{{ route('idea.show', $idea->id) }}">Show</a> --}}
+            <form action="{{ route('idea.destroy', $idea->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm">X</button>
+            </form>
+        </div>
     </div>
+
 </div>
 <div class="card-body">
     <p class="fs-6 fw-light text-muted">
-        {{$idea->content}}
+        {{ $idea->content }}
     </p>
     <div class="d-flex justify-content-between">
         <div>
             <a href="#" class="fw-light nav-link fs-6"> <span class="fas fa-heart me-1">
-                </span> {{$idea->likes}} </a>
+                </span> {{ $idea->likes }} </a>
         </div>
         <div>
             <span class="fs-6 fw-light text-muted"> <span class="fas fa-clock"> </span>
-            {{$idea->created_at}}</span>
+                {{ $idea->created_at }}</span>
         </div>
     </div>
 </div>
