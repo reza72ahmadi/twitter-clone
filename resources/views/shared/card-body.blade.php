@@ -9,12 +9,14 @@
             </div>
         </div>
         <div class="fa-pull-right">
-            {{-- <a  href="{{ route('idea.edit', $idea->id) }}">Edit</a>
-            <a  href="{{ route('idea.show', $idea->id) }}">Show</a> --}}
+            {{-- <a  href="{{ route('idea.edit', $idea->id) }}">Edit</a> --}}
+
             <form action="{{ route('idea.destroy', $idea->id) }}" method="post">
                 @csrf
                 @method('DELETE')
+                <a href="{{ route('idea.show', $idea->id) }}">Show</a>
                 <button type="submit" class="btn btn-danger btn-sm">X</button>
+                
             </form>
         </div>
     </div>
