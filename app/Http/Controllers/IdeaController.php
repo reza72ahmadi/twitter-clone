@@ -14,7 +14,7 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        $ideas = Idea::orderBy('created_at','DESC')->get();
+        $ideas = Idea::orderBy('created_at', 'DESC')->get();
         return view('dashboard', compact('ideas'));
     }
 
@@ -31,8 +31,8 @@ class IdeaController extends Controller
      */
     public function store(StoreIdeaRequest $request)
     {
-        Idea::create($request->all());
-        return redirect()->route('dashboard')->with('success','Idea Created Successfully');
+        Idea::create($request->validated());
+        return redirect()->route('dashboard')->with('success', 'Idea Created Successfully');
     }
 
     /**

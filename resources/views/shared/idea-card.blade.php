@@ -1,9 +1,12 @@
 <h4> Share yours ideas </h4>
-<form action="{{route('idea.store')}}" method="post">
+<form action="{{ route('idea.store') }}" method="post">
     @csrf
     <div class="row">
         <div class="mb-3">
             <textarea class="form-control" name="content" rows="3"></textarea>
+            @error('content')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
         <div class="">
             <button type="submit" class="btn btn-dark"> Share </button>
