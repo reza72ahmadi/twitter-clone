@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idea;
+use App\Models\User;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 
@@ -13,7 +14,8 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        //
+        $ideas = Idea::orderBy('created_at','DESC')->get();
+        return view('dashboard', compact('ideas'));
     }
 
     /**
@@ -29,7 +31,8 @@ class IdeaController extends Controller
      */
     public function store(StoreIdeaRequest $request)
     {
-        //
+        Idea::create($request->all());
+        return redirect()->route('dashboard');
     }
 
     /**
