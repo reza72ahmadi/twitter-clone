@@ -32,7 +32,7 @@ class IdeaController extends Controller
     public function store(StoreIdeaRequest $request)
     {
         Idea::create($request->all());
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success','Idea Created Successfully');
     }
 
     /**
