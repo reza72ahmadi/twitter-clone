@@ -32,6 +32,9 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="mt-2">
+                        {{ $ideas->links() }}
+                    </div>
                 </div>
                 <div class="col-3">
                     @include('shared.search-box')

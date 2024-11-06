@@ -14,8 +14,7 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        $ideas = Idea::orderBy('created_at', 'DESC')->get();
-        return view('dashboard', compact('ideas'));
+       
     }
 
     /**

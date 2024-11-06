@@ -24,6 +24,4 @@
             {{$idea->created_at}}</span>
         </div>
     </div>
-
-
 </div>
