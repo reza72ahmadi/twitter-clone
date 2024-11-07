@@ -1,3 +1,4 @@
+{{-- 
 <div class="px-3 pt-4 pb-2">
     <div class="d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -9,8 +10,6 @@
             </div>
         </div>
         <div class="fa-pull-right">
-
-
             <form action="{{ route('idea.destroy', $idea->id) }}" method="post">
                 @csrf
                 @method('DELETE')
@@ -55,4 +54,20 @@
             </div>
         </div>
     </div>
-@endif
+@endif --}}
+
+<h4> Share yours ideas </h4>
+<form action="{{ route('idea.store') }}" method="post">
+    @csrf
+    <div class="row">
+        <div class="mb-3">
+            <textarea class="form-control" name="content" rows="3"></textarea>
+            @error('content')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+        <div class="">
+            <button type="submit" class="btn btn-dark"> Share </button>
+        </div>
+    </div>
+</form>
