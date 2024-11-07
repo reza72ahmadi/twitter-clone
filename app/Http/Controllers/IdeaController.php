@@ -28,7 +28,8 @@ class IdeaController extends Controller
      */
     public function edit(Idea $idea)
     {
-        //
+        $editing = true;
+        return view('show', compact('editing', 'idea'));
     }
 
     /**
@@ -36,7 +37,8 @@ class IdeaController extends Controller
      */
     public function update(UpdateIdeaRequest $request, Idea $idea)
     {
-        //
+        $idea->update($request->validated());
+        return redirect()->route('dashboard')->with('success', 'Idea Updated Successfully');
     }
 
     /**
