@@ -14,7 +14,11 @@ class CommentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() {}
+    public function index()
+    {
+        $users = User::all();
+        return view('dashboard', compact('users'));
+    }
 
 
     public function create()

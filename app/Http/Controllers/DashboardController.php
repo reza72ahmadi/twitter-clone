@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idea;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -17,4 +18,6 @@ class DashboardController extends Controller
             'ideas' => $ideas->paginate(3)
         ]);
     }
+
+ 
 }

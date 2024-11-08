@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idea;
+use App\Models\User;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 
@@ -11,7 +12,8 @@ class IdeaController extends Controller
 
     public function store(StoreIdeaRequest $request)
     {
-        Idea::create($request->validated());
+        $inputs = $request->validated();
+        Idea::create($inputs);
         return redirect()->route('dashboard')->with('success', 'Idea Created Successfully');
     }
 
