@@ -6,14 +6,13 @@
         </div>
         <div class="col-6">
             @include('shared.message')
+
             @include('shared.submit-idea')
             <hr>
-            @foreach ($ideas as $idea)
-                <div class="mt-3">
-                   @include('shared.idea-card')
-                </div>
-            @endforeach
-            <div class="mt-2">
+            <div class="mt-3">
+                @foreach ($ideas as $idea)
+                    @include('shared.idea-card')
+                @endforeach
                 {{ $ideas->links() }}
             </div>
         </div>
@@ -21,5 +20,6 @@
             @include('shared.search-box')
             @include('shared.follow-box')
         </div>
+    </div>
     </div>
 @endsection
