@@ -22,7 +22,7 @@ class StoreIdeaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'content' => 'required|min:2|max:1000',
         ];
     }
 }
